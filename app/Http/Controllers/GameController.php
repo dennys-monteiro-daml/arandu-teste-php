@@ -39,7 +39,7 @@ class GameController extends Controller
             )
         );
 
-        // Instancia os inimigos a partir da seessão, se
+        // Instancia os inimigos a partir da sessão, se
         // a sessão não existir, gera uma coleção de
         // inimigos
         $this->enemies = session(
