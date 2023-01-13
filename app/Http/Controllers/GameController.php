@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Constants\Map;
+use App\Constants\Movement;
 use App\Models\Enemy;
 use App\Models\Player;
 use Illuminate\Http\Request;
@@ -52,6 +53,12 @@ class GameController extends Controller
             0
         );
 
+        $this->coin = session (
+            'coin',
+            1000,
+            collect(Coin::generateCoin(Map::COIN))
+        );
+
     }
 
     /**
@@ -65,6 +72,7 @@ class GameController extends Controller
             'player' => $this->player,
             'enemies' => $this->enemies,
             'score' => $this->score,
+            'coin' => $this->coin,
         ]);
     }
 

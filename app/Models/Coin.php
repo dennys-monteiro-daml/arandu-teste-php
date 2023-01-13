@@ -5,24 +5,21 @@ namespace App\Models;
 use App\Constants\Map;
 use App\Contracts\GameObject;
 
-class Enemy extends GameObject
+class Coin extends GameObject
 {
+    $score = 1;
 
     /**
-     * Criar inimigos
+     * Criar moeda
      *
-     * @param mixed $count O número de inimigos a serem criados
-     * @return array<Enemy>
+     * @param mixed $count O número de moeda a serem criados
+     * @return array<Coin>
      */
-    static function generateEnemies($count)
+    static function generateCoin($count)
     {
-        $enemies = [];
+        $coin = 1000 * $score;
 
-        for ($i = 0; $i < 40; $i++) {
-            $enemies[] = new Enemy();
-        }
-
-        return $enemies;
+        return $coin;
     }
 
     /**
@@ -46,7 +43,7 @@ class Enemy extends GameObject
             'y' => $y
         ] = $this->createRandomPosition();
 
-        // não carregar inimigos no mesmo ponto que o jogador
+        // não carregar moeda no mesmo ponto que o jogador
         while ($this->isCollidingWith(request()->route()->controller->player)) {
             // se foi gerado na mesma posição que o jogador,
             // refaz a posição
@@ -64,7 +61,7 @@ class Enemy extends GameObject
 
         $css = "
         .tile-{$this->x()}-{$this->y()} {
-            background-color: blue;
+            background-color: gold;
         }
         ";
 
@@ -73,16 +70,16 @@ class Enemy extends GameObject
     }
 
     /**
-     * Mover o inimigo em uma direção aleatória, com 20% de chance de não se mover.
+     * Mover a moeda em uma direção aleatória, com 20% de chance de não se mover.
      *
      * @return void
      */
-    public function moveRandomDirection()
-    {
-        $directions = collect(['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'idle']);
+    // public function moveRandomDirection()
+    // {
+    //     $directions = collect(['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'idle']);
 
-        $direction = $directions->random();
+    //     $direction = $directions->random();
 
-        $this->move($direction);
-    }
+    //     $this->move($direction);
+    // }
 }

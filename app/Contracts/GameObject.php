@@ -53,19 +53,19 @@ abstract class GameObject
     public function move($direction)
     {
         switch ($direction) {
-            case 'ArrowUp':
+            case 'UP':
                 $this->_y--;
                 break;
 
-            case 'ArrowDown':
+            case 'Down':
                 $this->_y++;
                 break;
 
-            case 'ArrowLeft':
+            case 'Left':
                 $this->_x--;
                 break;
 
-            case 'ArrowRight':
+            case 'Right':
                 $this->_x++;
                 break;
 

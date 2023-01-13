@@ -26,7 +26,7 @@ Utilize o comando `php artisan serve` ou crie um Host Virtual (Xampp, docker...)
 
 A página da web apresentará um 'tabuleiro', com um quadrado vermelho (jogador) e vários quadrados azuis (inimigos).
 
-Usando as setas do teclado é possível mover o jogador. Sempre que o jogador se move todos os inimigos podem ou não se mover em alguma direação aleatória.
+Usando as setas do teclado é possível mover o jogador. Sempre que o jogador se move todos os inimigos podem ou não se mover em alguma direção aleatória.
 
 ## Arquivos importantes
 

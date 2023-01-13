@@ -23,8 +23,21 @@ class Map
     const TILE_SIZE = 16;
 
     /**
-     * Número de inimigos a serem inicalizados
+     * Número de inimigos a serem inicializados
      * @var integer
      */
     const ENEMIES = 40;
+
+    /**
+     * Número de coin a ser inicializado
+     * @var integer
+     */
+    const COIN = 1;
+
+        /**
+     * Número de jogador a ser inicializado
+     * @var integer
+     */
+    const PLAYER = 1;
+
 }
